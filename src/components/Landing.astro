@@ -1,4 +1,5 @@
 ---
+import { ArrowRight } from "@lucide/astro"
 import Github from "../assets/github.svg"
 import LinkedIn from "../assets/linkedin.svg"
 import Gmail from "../assets/gmail.svg"
@@ -94,17 +95,22 @@ const projects = [
         <a
           href={project.url}
           target="_blank"
-          class="card relative text-left p-4 rounded-lg bg-card hover:border-muted-hover hover:-translate-y-0.5 transition-all"
+          class="group flex items-center text-left p-4 rounded-lg bg-card hover:-translate-y-0.5 transition-all"
         >
-          <h1 class="font-bold sm:text-lg">{project.name}</h1>
-          <p class="text-muted text-sm sm:text-base">{project.description}</p>
-          <ul class="pt-4 flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-              <li class="font-bold text-xs rounded-full bg-accent px-1.5">
-                {tag}
-              </li>
-            ))}
-          </ul>
+          <div class="w-full">
+            <h1 class="font-bold sm:text-lg">{project.name}</h1>
+            <p class="text-muted text-sm sm:text-base">{project.description}</p>
+            <ul class="pt-4 flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <li class="font-bold text-xs rounded-full bg-accent px-1.5">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <ArrowRight class="text-muted group-hover:text-foreground" />
+          </div>
         </a>
       ))
     }
