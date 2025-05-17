@@ -1,5 +1,90 @@
 ---
 import "../styles/global.css"
+import { PhGithubLogo, PhLinkedinLogo, PhEnvelope } from "phosphor-icons-astro"
+
+const pfpUrl = "https://github.com/CollinBrennan.png"
+
+const links = [
+  {
+    name: "Github",
+    url: "https://github.com/CollinBrennan",
+    icon: PhGithubLogo,
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/collinrbrennan",
+    icon: PhLinkedinLogo,
+  },
+  {
+    name: "Email",
+    url: "mailto:contact@collinbrennan.dev",
+    icon: PhEnvelope,
+  },
+]
+
+const projects = [
+  {
+    name: "Project 1",
+    url: "",
+    description: "My first project!",
+    tags: ["next.js", "postgresql", "tailwind"],
+  },
+  {
+    name: "Project 2",
+    url: "",
+    description: "My second project!",
+    tags: ["next.js", "postgresql", "tailwind"],
+  },
+]
 ---
 
-<h1 class="bg-mint-500">Hello!</h1>
+<main
+  class="flex flex-col items-center text-center max-w-md m-auto pt-16 px-4 gap-8"
+>
+  <img src={pfpUrl} class="rounded-full size-32" />
+
+  <div>
+    <h1 class="font-bold text-2xl">Collin Brennan</h1>
+    <h1 class="font-semibold text-muted">Software Engineer</h1>
+  </div>
+
+  <p class="text-muted">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla
+    nulla a aliquam tempor. Aenean faucibus sit amet leo placerat condimentum.
+  </p>
+
+  <div class="flex gap-4">
+    {
+      links.map((link) => (
+        <a
+          href={link.url}
+          target="_blank"
+          aria-label={link.name}
+          title={link.name}
+        >
+          <link.icon size={40} aria-hidden={true} />
+        </a>
+      ))
+    }
+  </div>
+
+  <div class="flex flex-col w-full gap-2">
+    {
+      projects.map((project) => (
+        <a
+          href={project.url}
+          target="_blank"
+          class="text-left p-4 border border-border rounded-lg"
+        >
+          <h1 class="font-bold">{project.name}</h1>
+          <p class="text-muted">{project.description}</p>
+          <div class="flex gap-1 pt-4">
+            {project.tags.map((tag) => (
+              <span class="bg-accent-bg px-2 rounded-full text-xs">{tag}</span>
+            ))}
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</main>
