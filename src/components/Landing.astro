@@ -1,61 +1,9 @@
 ---
 import { ExternalLink } from "@lucide/astro"
-import Github from "../assets/github.svg"
-import LinkedIn from "../assets/linkedin.svg"
-import Gmail from "../assets/gmail.svg"
-import Bluesky from "../assets/bluesky.svg"
+import links from "../content/links.json"
+import projects from "../content/projects.json"
 
 const pfpUrl = "https://github.com/CollinBrennan.png"
-
-const links = [
-  {
-    name: "Github",
-    url: "https://github.com/CollinBrennan",
-    icon: Github,
-  },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/collinrbrennan",
-    icon: LinkedIn,
-  },
-  {
-    name: "Bluesky",
-    url: "https://bsky.app/profile/collinbrennan.dev",
-    icon: Bluesky,
-  },
-  {
-    name: "Email",
-    url: "mailto:contact@collinbrennan.dev",
-    icon: Gmail,
-  },
-]
-
-const projects = [
-  {
-    name: "Skill Chronicle",
-    url: "https://skill-chronicle.vercel.app/",
-    description: "Skill-learning log that tracks progress over time.",
-    tags: ["Next.js", "PostgreSQL", "Tailwind"],
-  },
-  {
-    name: "Guitar Ecommerce Site",
-    url: "https://github.com/CollinBrennan/guitar-shop",
-    description: "Online store for customizable guitars.",
-    tags: ["React", "Express", "MongoDB", "Node", "Stripe API"],
-  },
-  {
-    name: "Wrdz",
-    url: "https://wrdz-7570a.web.app/",
-    description: "Highly customizable random word generator.",
-    tags: ["React", "Node", "Firebase", "Tailwind"],
-  },
-  {
-    name: "This site!",
-    url: "https://github.com/CollinBrennan/personal-site",
-    description: "Source code for my personal website.",
-    tags: ["🚀 Astro", "Tailwind"],
-  },
-]
 ---
 
 <main
@@ -83,7 +31,16 @@ const projects = [
           title={link.name}
           class="fill-muted transition-all hover:-translate-y-0.5 hover:fill-foreground size-6"
         >
-          <link.icon />
+          <svg
+            role="img"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <>
+              <title>{link.name}</title>
+              <path d={link.icon} />
+            </>
+          </svg>
         </a>
       ))
     }
