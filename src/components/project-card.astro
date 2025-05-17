@@ -1,0 +1,26 @@
+---
+import { ExternalLink } from "@lucide/astro"
+
+const { url, name, description, tags } = Astro.props
+---
+
+<a
+  href={url}
+  target="_blank"
+  class="group flex gap-4 items-center text-left p-4 rounded-lg bg-card hover:-translate-y-0.5 transition-all"
+>
+  <div class="w-full">
+    <h1 class="font-bold sm:text-lg">{name}</h1>
+    <p class="text-muted text-sm sm:text-base">{description}</p>
+    <ul class="pt-4 flex flex-wrap gap-2">
+      {
+        tags.map((tag) => (
+          <li class="font-bold text-xs rounded-full bg-accent px-1.5">{tag}</li>
+        ))
+      }
+    </ul>
+  </div>
+  <div>
+    <ExternalLink class="text-muted group-hover:text-foreground" />
+  </div>
+</a>
