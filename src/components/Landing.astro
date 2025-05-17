@@ -107,14 +107,14 @@ const projects = [
         >
           <h1 class="font-bold">{project.name}</h1>
           <p class="text-muted">{project.description}</p>
-          <div class="flex gap-3 pt-4">
+          <ul class="pt-4 flex flex-wrap gap-x-4">
             {project.tags.map((tag) => (
-              <span class="bg-muted-bg rounded-full font-bold text-xs">
+              <li class="font-bold text-xs">
                 <span aria-hidden={true}>{tag.emoji}</span>
-                <span>{tag.name}</span>
-              </span>
+                <span class="text-nowrap">{tag.name}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </a>
       ))
     }
