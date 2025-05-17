@@ -1,5 +1,8 @@
 ---
-import { PhGithubLogo, PhLinkedinLogo, PhEnvelope } from "phosphor-icons-astro"
+import Github from "../assets/github.svg"
+import LinkedIn from "../assets/linkedin.svg"
+import Gmail from "../assets/gmail.svg"
+import Bluesky from "../assets/bluesky.svg"
 
 const pfpUrl = "https://github.com/CollinBrennan.png"
 
@@ -7,17 +10,22 @@ const links = [
   {
     name: "Github",
     url: "https://github.com/CollinBrennan",
-    icon: PhGithubLogo,
+    icon: Github,
   },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/collinrbrennan",
-    icon: PhLinkedinLogo,
+    icon: LinkedIn,
+  },
+  {
+    name: "Bluesky",
+    url: "https://bsky.app/profile/collinbrennan.dev",
+    icon: Bluesky,
   },
   {
     name: "Email",
     url: "mailto:contact@collinbrennan.dev",
-    icon: PhEnvelope,
+    icon: Gmail,
   },
 ]
 
@@ -26,63 +34,45 @@ const projects = [
     name: "Skill Chronicle",
     url: "https://skill-chronicle.vercel.app/",
     description: "Skill-learning log that tracks progress over time.",
-    tags: [
-      { name: "Next.js", emoji: "▲" },
-      { name: "PostgreSQL", emoji: "🐘" },
-      { name: "Tailwind", emoji: "🌊" },
-    ],
+    tags: ["Next.js", "PostgreSQL", "Tailwind"],
   },
   {
     name: "Guitar Ecommerce Site",
     url: "https://github.com/CollinBrennan/guitar-shop",
     description: "Online store for customizable guitars.",
-    tags: [
-      { name: "React", emoji: "⚛️" },
-      { name: "Express", emoji: "🚅" },
-      { name: "MongoDB", emoji: "🌿" },
-      { name: "Node", emoji: "🟩" },
-      { name: "Stripe API", emoji: "💳" },
-    ],
+    tags: ["React", "Express", "MongoDB", "Node", "Stripe API"],
   },
   {
     name: "Wrdz",
     url: "https://wrdz-7570a.web.app/",
     description: "Highly customizable random word generator.",
-    tags: [
-      { name: "React", emoji: "⚛️" },
-      { name: "Node", emoji: "🟩" },
-      { name: "Firebase", emoji: "🔥" },
-      { name: "Tailwind", emoji: "🌊" },
-    ],
+    tags: ["React", "Node", "Firebase", "Tailwind"],
   },
   {
-    name: "This website!",
+    name: "This site!",
     url: "https://github.com/CollinBrennan/personal-site",
     description: "Source code for my personal website.",
-    tags: [
-      { name: "Astro", emoji: "🚀" },
-      { name: "Tailwind", emoji: "🌊" },
-    ],
+    tags: ["🚀 Astro", "Tailwind"],
   },
 ]
 ---
 
 <main
-  class="flex flex-col items-center text-center max-w-md m-auto pt-16 px-4 gap-8"
+  class="flex flex-col items-center text-center max-w-xl m-auto py-16 px-4 gap-10"
 >
-  <img src={pfpUrl} class="rounded-full size-32" />
+  <img src={pfpUrl} alt="Profile picture" class="rounded-full size-32" />
 
   <div>
-    <h1 class="font-bold text-2xl">Collin Brennan</h1>
-    <h1 class="font-semibold text-muted">Software Engineer</h1>
+    <h1 class="font-bold text-2xl sm:text-3xl">Collin Brennan</h1>
+    <h1 class="font-semibold text-muted pt-1">Software Engineer</h1>
   </div>
 
   <p class="text-muted text-balance">
-    Computer science graduate and coffee addict from New Jersey. Designing and
-    building full-stack web apps!
+    Computer nerd and coffee addict from New Jersey, designing and building
+    full-stack web apps!
   </p>
 
-  <div class="flex gap-6">
+  <div class="flex gap-8 py-4">
     {
       links.map((link) => (
         <a
@@ -90,8 +80,9 @@ const projects = [
           target="_blank"
           aria-label={link.name}
           title={link.name}
+          class="fill-muted transition-all hover:-translate-y-0.5 hover:fill-muted-hover size-6"
         >
-          <link.icon size={32} aria-hidden={true} />
+          <link.icon />
         </a>
       ))
     }
@@ -103,15 +94,14 @@ const projects = [
         <a
           href={project.url}
           target="_blank"
-          class="text-left p-4 border border-border rounded-lg"
+          class="text-left p-4 bg-card rounded-lg"
         >
-          <h1 class="font-bold">{project.name}</h1>
-          <p class="text-muted">{project.description}</p>
-          <ul class="pt-4 flex flex-wrap gap-x-4">
+          <h1 class="font-bold sm:text-lg">{project.name}</h1>
+          <p class="text-muted text-sm">{project.description}</p>
+          <ul class="pt-4 flex flex-wrap gap-x-2">
             {project.tags.map((tag) => (
               <li class="font-bold text-xs">
-                <span aria-hidden={true}>{tag.emoji}</span>
-                <span class="text-nowrap">{tag.name}</span>
+                <span class="text-nowrap">{tag}</span>
               </li>
             ))}
           </ul>

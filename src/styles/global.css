@@ -1,15 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: oklch(0.14 0 286);
+  --color-background: oklch(0 0 0);
   --color-foreground: oklch(98.5% 0.002 247.839);
 
-  --color-muted: oklch(0.71 0.01 286);
+  --color-muted: oklch(70.4% 0.04 256.788);
+  --color-muted-hover: oklch(92.9% 0.013 255.508);
 
-  --color-accent-bg: oklch(0.46 0.21 277);
   --color-accent: oklch(0.68 0.16 277);
 
   --color-border: oklch(0.27 0.01 286);
+
+  --color-card: oklch(12.9% 0 0);
 }
 
 html {
