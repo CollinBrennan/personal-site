@@ -2,16 +2,13 @@
 
 @theme {
   --color-background: oklch(0 0 0);
-  --color-foreground: oklch(98.5% 0.002 247.839);
+  --color-foreground: oklch(98.4% 0.003 247.858);
 
   --color-muted: oklch(70.4% 0.04 256.788);
-  --color-muted-hover: oklch(92.9% 0.013 255.508);
 
-  --color-accent: oklch(0.68 0.16 277);
+  --color-accent: oklch(51.1% 0.262 276.966);
 
-  --color-border: oklch(0.27 0.01 286);
-
-  --color-card: oklch(12.9% 0 0);
+  --color-card: oklch(14.5% 0 0);
 }
 
 html {
