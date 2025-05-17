@@ -23,16 +23,46 @@ const links = [
 
 const projects = [
   {
-    name: "Project 1",
-    url: "",
-    description: "My first project!",
-    tags: ["next.js", "postgresql", "tailwind"],
+    name: "Skill Chronicle",
+    url: "https://skill-chronicle.vercel.app/",
+    description: "Skill-learning log that tracks progress over time.",
+    tags: [
+      { name: "Next.js", emoji: "▲" },
+      { name: "PostgreSQL", emoji: "🐘" },
+      { name: "Tailwind", emoji: "🌊" },
+    ],
   },
   {
-    name: "Project 2",
-    url: "",
-    description: "My second project!",
-    tags: ["next.js", "postgresql", "tailwind"],
+    name: "Guitar Ecommerce Site",
+    url: "https://github.com/CollinBrennan/guitar-shop",
+    description: "Online store for customizable guitars.",
+    tags: [
+      { name: "React", emoji: "⚛️" },
+      { name: "Express", emoji: "🚅" },
+      { name: "MongoDB", emoji: "🌿" },
+      { name: "Node", emoji: "🟩" },
+      { name: "Stripe API", emoji: "💳" },
+    ],
+  },
+  {
+    name: "Wrdz",
+    url: "https://wrdz-7570a.web.app/",
+    description: "Highly customizable random word generator.",
+    tags: [
+      { name: "React", emoji: "⚛️" },
+      { name: "Node", emoji: "🟩" },
+      { name: "Firebase", emoji: "🔥" },
+      { name: "Tailwind", emoji: "🌊" },
+    ],
+  },
+  {
+    name: "This website!",
+    url: "https://github.com/CollinBrennan/personal-site",
+    description: "Source code for my personal website.",
+    tags: [
+      { name: "Astro", emoji: "🚀" },
+      { name: "Tailwind", emoji: "🌊" },
+    ],
   },
 ]
 ---
@@ -47,12 +77,12 @@ const projects = [
     <h1 class="font-semibold text-muted">Software Engineer</h1>
   </div>
 
-  <p class="text-muted">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla
-    nulla a aliquam tempor. Aenean faucibus sit amet leo placerat condimentum.
+  <p class="text-muted text-balance">
+    Computer science graduate and coffee addict from New Jersey. Designing and
+    building full-stack web apps!
   </p>
 
-  <div class="flex gap-4">
+  <div class="flex gap-6">
     {
       links.map((link) => (
         <a
@@ -61,7 +91,7 @@ const projects = [
           aria-label={link.name}
           title={link.name}
         >
-          <link.icon size={40} aria-hidden={true} />
+          <link.icon size={32} aria-hidden={true} />
         </a>
       ))
     }
@@ -77,9 +107,12 @@ const projects = [
         >
           <h1 class="font-bold">{project.name}</h1>
           <p class="text-muted">{project.description}</p>
-          <div class="flex gap-1 pt-4">
+          <div class="flex gap-3 pt-4">
             {project.tags.map((tag) => (
-              <span class="bg-accent-bg px-2 rounded-full text-xs">{tag}</span>
+              <span class="bg-muted-bg rounded-full font-bold text-xs">
+                <span aria-hidden={true}>{tag.emoji}</span>
+                <span>{tag.name}</span>
+              </span>
             ))}
           </div>
         </a>
