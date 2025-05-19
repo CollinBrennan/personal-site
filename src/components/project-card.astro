@@ -1,6 +1,13 @@
 ---
 import { ExternalLink } from "@lucide/astro"
 
+interface Props {
+  url: string
+  name: string
+  description: string
+  tags: string[]
+}
+
 const { url, name, description, tags } = Astro.props
 ---
 
