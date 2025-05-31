@@ -14,20 +14,25 @@ const { url, name, description, tags } = Astro.props
 <a
   href={url}
   target="_blank"
-  class="group flex gap-4 items-center text-left p-4 rounded-lg bg-card hover:-translate-y-0.5 transition-all"
+  class="group flex gap-4 text-left p-4 rounded-lg bg-surface0 hover:bg-surface1 transition-all"
 >
   <div class="w-full">
     <h1 class="font-bold sm:text-lg">{name}</h1>
-    <p class="text-muted text-sm sm:text-base">{description}</p>
+    <p class="text-subtext1 text-sm sm:text-base">{description}</p>
     <ul class="pt-4 flex flex-wrap gap-2">
       {
-        tags.map((tag) => (
-          <li class="font-bold text-xs rounded-full bg-accent px-1.5">{tag}</li>
+        tags.map((tag, i) => (
+          <li
+            style={{ backgroundColor: `var(--color-accent${i % 6})` }}
+            class="font-bold text-xs text-black rounded-full px-1.5"
+          >
+            {tag}
+          </li>
         ))
       }
     </ul>
   </div>
   <div>
-    <ExternalLink class="text-muted group-hover:text-foreground" />
+    <ExternalLink class="text-subtext1 group-hover:text-text" />
   </div>
 </a>
